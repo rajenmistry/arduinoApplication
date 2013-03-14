@@ -32,7 +32,7 @@ class StartPollingListener implements ItemListener {
     public void itemStateChanged(ItemEvent e) {
         if (e.getStateChange() == 1) {
             timer = new Timer();
-            timer.scheduleAtFixedRate(new PollingArduino(arduino), 0, 2000);
+            timer.scheduleAtFixedRate(new PollingArduino(arduino,logArea), 0, 2000);
             
 
         } else {

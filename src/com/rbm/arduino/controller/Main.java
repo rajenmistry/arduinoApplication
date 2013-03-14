@@ -7,7 +7,6 @@ package com.rbm.arduino.controller;
 import com.rbm.arduino.model.Arduino;
 import com.rbm.arduino.view.CheckBoxPanel;
 import com.rbm.arduino.view.MainWindow;
-import javax.swing.JCheckBox;
 import javax.swing.SwingUtilities;
 
 /**
@@ -31,14 +30,6 @@ public class Main {
             public void run() {
                 Controller controller = new Controller(arduino, mainwindow, checkboxpanel);
                 controller.initialise();
-                
-                
-              
-                
-
-
-           
-                //To change body of generated methods, choose Tools | Templates.
 
             }
         });

@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import javax.swing.JTextArea;
 
 /**
+ * This class is a new ActionListener
  *
  * @author rajen
  */
@@ -26,6 +27,11 @@ public class ChckListener implements ActionListener {
     private List<String> led;
     private JTextArea debug;
 
+    /**
+     * Creates a ChckListener which detects if a check-box is checked
+     *
+     * @param ard Arduino object
+     */
     public ChckListener(Arduino ard) {
 
         this.ard = ard;
@@ -34,25 +40,24 @@ public class ChckListener implements ActionListener {
 
     }
 
-
-
+    /**
+     * Method to respond to check-box
+     *
+     * @param e Action event
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 
         try {
-            Integer number = (led.indexOf(e.getActionCommand())) + 1;
-            System.out.println("number: " + number.toString());
-            ard.write(number.toString());
-      
+            Integer number = (led.indexOf(e.getActionCommand())) + 1; //Use the action command to locate the position in the array
+            //System.out.println("number: " + number.toString());
+            ard.write(number.toString()); //Write this out to Arduino
+
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(ChckListener.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-       
-        
-        }
-        
-        
-        
-    
+
+
+
+    }
 }

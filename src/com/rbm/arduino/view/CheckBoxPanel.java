@@ -8,10 +8,8 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JCheckBox;
-import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
-
 
 /**
  *
@@ -21,9 +19,8 @@ public class CheckBoxPanel extends JPanel {
 
     private JCheckBox[] boxes = {new JCheckBox("red"), new JCheckBox("green"), new JCheckBox("yellow")};
     private JTextArea text, logArea;
-    private JButton tempertureGetter;  
+    private JButton tempertureGetter;
     private JRadioButton temperaturelogger;
-
 
     /**
      * This class creates the GUI and is composed of 2 panels
@@ -60,10 +57,10 @@ public class CheckBoxPanel extends JPanel {
          * Third panel; temperature logger
          */
         JPanel bottomPanel = new JPanel();
-      
+
         temperaturelogger = new JRadioButton("Temperature Logging");
-         logArea = new JTextArea("Temperature Log");
-  
+        logArea = new JTextArea("Temperature Log");
+
         bottomPanel.add(temperaturelogger);
         bottomPanel.add(logArea);
         this.add(bottomPanel);
@@ -82,13 +79,10 @@ public class CheckBoxPanel extends JPanel {
         return tempertureGetter;
     }
 
-    
     public JTextArea getLogArea() {
         return logArea;
     }
 
-
-    
     public JRadioButton getTemperaturelogger() {
         return temperaturelogger;
     }
