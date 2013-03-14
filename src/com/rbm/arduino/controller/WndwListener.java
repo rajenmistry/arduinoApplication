@@ -27,7 +27,7 @@ public class WndwListener implements WindowListener {
         this.toggle = toggle;
     }
 
-    @Override
+     @Override
     public void windowOpened(WindowEvent e) {
     }
 
@@ -35,7 +35,7 @@ public class WndwListener implements WindowListener {
     public void windowClosing(WindowEvent e) {
         if (toggle.isSelected()) {
 
-            JOptionPane.showMessageDialog(null, "Please stop polling before closing", "Inane error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please stop polling before closing", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
 
 

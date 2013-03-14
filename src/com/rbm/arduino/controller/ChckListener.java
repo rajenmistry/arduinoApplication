@@ -25,7 +25,6 @@ public class ChckListener implements ActionListener {
     private final String[] lights = {
         "red", "yellow", "green"};
     private List<String> led;
-    private JTextArea debug;
 
     /**
      * Creates a ChckListener which detects if a check-box is checked
@@ -33,11 +32,8 @@ public class ChckListener implements ActionListener {
      * @param ard Arduino object
      */
     public ChckListener(Arduino ard) {
-
         this.ard = ard;
-
         led = Arrays.asList(lights);
-
     }
 
     /**

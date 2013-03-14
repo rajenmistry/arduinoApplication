@@ -2,12 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.rbm.arduino.view;
+package com.rbm.arduino.view.javafx;
 
 /**
  *
  * @author rajen
  */
-public class bogus {
+public class FxUI {
     
 }

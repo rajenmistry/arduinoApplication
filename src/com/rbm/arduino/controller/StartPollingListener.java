@@ -29,10 +29,18 @@ class StartPollingListener implements ItemListener {
 
     }
 
+    /**
+     * get timer object
+     *
+     * @return Timer
+     */
     public Timer getTimer() {
         return timer;
     }
-
+/**
+ * 
+ * @param e 
+ */
     @Override
     public void itemStateChanged(ItemEvent e) {
         if (e.getStateChange() == 1) {

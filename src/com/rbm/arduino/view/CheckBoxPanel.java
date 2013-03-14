@@ -4,7 +4,6 @@
  */
 package com.rbm.arduino.view;
 
-import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -18,7 +17,8 @@ import javax.swing.JTextArea;
  */
 public class CheckBoxPanel extends JPanel {
 
-    private JCheckBox[] boxes = {new JCheckBox("red"), new JCheckBox("green"), new JCheckBox("yellow")};
+    private JCheckBox[] boxes = {new JCheckBox("red"), new JCheckBox("green"),
+        new JCheckBox("yellow")};
     private JTextArea text, logArea;
     private JButton tempertureGetter;
     private JRadioButton temperaturelogger;
@@ -33,11 +33,7 @@ public class CheckBoxPanel extends JPanel {
          * Top panel, this is where the check boxes are
          */
         JPanel topPanel = new JPanel();
-
-        /**
-         * Add each check box to the panel
-         */
-        for (JCheckBox a : boxes) {
+        for (JCheckBox a : boxes) { //add each check box to the panel
             topPanel.add(a);
         }
         this.add(topPanel);
@@ -58,33 +54,57 @@ public class CheckBoxPanel extends JPanel {
          * Third panel; temperature logger
          */
         JPanel bottomPanel = new JPanel();
-
         temperaturelogger = new JRadioButton("Temperature Logging");
         logArea = new JTextArea("");
         logArea.setSize(100, 100);
-        
         bottomPanel.add(temperaturelogger);
         bottomPanel.add(logArea);
         this.add(bottomPanel);
 
     }
 
+    /**
+     * Get the array of JCheckBoxes for lights
+     *
+     * @return array of check boxes
+     */
     public JCheckBox[] getBoxes() {
         return this.boxes;
     }
 
+    /**
+     * Get TextArea for temperature data
+     *
+     * @return JTextArea
+     *
+     */
     public JTextArea getText() {
         return text;
     }
 
+    /**
+     * Get JButton that requests temperature
+     *
+     * @return JButton
+     */
     public JButton getTempertureGetter() {
         return tempertureGetter;
     }
 
+    /**
+     * Get JTextArea for temperature logging
+     *
+     * @return JTextArea
+     */
     public JTextArea getLogArea() {
         return logArea;
     }
 
+    /**
+     * Get JRadioButton to start/stop temperature logging
+     *
+     * @return
+     */
     public JRadioButton getTemperaturelogger() {
         return temperaturelogger;
     }
