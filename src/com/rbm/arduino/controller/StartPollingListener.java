@@ -13,7 +13,8 @@ import javax.swing.JTextArea;
 import java.util.Timer;
 
 /**
- *http://enos.itcollege.ee/~jpoial/docs/tutorial/essential/threads/timer.html
+ * http://enos.itcollege.ee/~jpoial/docs/tutorial/essential/threads/timer.html
+ *
  * @author rajen
  */
 class StartPollingListener implements ItemListener {
@@ -28,12 +29,16 @@ class StartPollingListener implements ItemListener {
 
     }
 
+    public Timer getTimer() {
+        return timer;
+    }
+
     @Override
     public void itemStateChanged(ItemEvent e) {
         if (e.getStateChange() == 1) {
             timer = new Timer();
-            timer.scheduleAtFixedRate(new PollingArduino(arduino,logArea), 0, 2000);
-            
+            timer.scheduleAtFixedRate(new PollingArduino(arduino, logArea), 0, 2000);
+
 
         } else {
             timer.cancel();

@@ -21,12 +21,13 @@ public class Controller {
     private Arduino arduino;
     private MainWindow mainWindow;
     private CheckBoxPanel checkBoxPanel;
-/**
- * 
- * @param arduino Arduino object
- * @param mainWindow Main JFrame
- * @param checkBoxPanel JPanel with JCheckBoxes 
- */
+
+    /**
+     *
+     * @param arduino Arduino object
+     * @param mainWindow Main JFrame
+     * @param checkBoxPanel JPanel with JCheckBoxes
+     */
     public Controller(Arduino arduino, MainWindow mainWindow, CheckBoxPanel checkBoxPanel) {
         this.arduino = arduino;
         this.mainWindow = mainWindow;
@@ -38,7 +39,7 @@ public class Controller {
      */
     void initialise() {
         arduino.initialize();
-        mainWindow.addWindowListener(new WndwListener(arduino));
+
         JCheckBox[] boxes = checkBoxPanel.getBoxes();
         for (JCheckBox jCheckBox : boxes) {
             jCheckBox.addActionListener(new ChckListener(arduino));
@@ -63,6 +64,7 @@ public class Controller {
         /**
          * Create Gui, add check boxes and make the window visible
          */
+        mainWindow.addWindowListener(new WndwListener(arduino, startPolling));
         mainWindow.CreateGui();
         mainWindow.add(checkBoxPanel);
         mainWindow.setVisible(true);

@@ -49,7 +49,7 @@ class TemperatureListener implements ActionListener {
             arduino.write("5");
             String message = arduino.read();
             
-            Thread.sleep(2000);
+            Thread.sleep(500);
 
             if (message.equals("")) {
                 textBox.setText("Fail");

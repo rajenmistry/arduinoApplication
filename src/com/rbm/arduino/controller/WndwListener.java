@@ -10,6 +10,8 @@ import java.awt.event.WindowListener;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JToggleButton;
 
 /**
  *
@@ -18,10 +20,11 @@ import java.util.logging.Logger;
 public class WndwListener implements WindowListener {
 
     private Arduino ard;
+    private JToggleButton toggle;
 
-    public WndwListener(Arduino ard) {
+    public WndwListener(Arduino ard, JToggleButton toggle) {
         this.ard = ard;
-
+        this.toggle = toggle;
     }
 
     @Override
@@ -30,16 +33,16 @@ public class WndwListener implements WindowListener {
 
     @Override
     public void windowClosing(WindowEvent e) {
-      
-        
-        
-        try {
-            ard.write("0");
-        } catch (IOException | InterruptedException ex) {
-            Logger.getLogger(WndwListener.class.getName()).log(Level.SEVERE, null, ex);
+        if (toggle.isSelected()) {
+
+            JOptionPane.showMessageDialog(null, "Please stop polling before closing", "Inane error", JOptionPane.ERROR_MESSAGE);
+        } else {
+
+
+            ard.close();
+            System.out.println("CLOSING");
+            System.exit(0);
         }
-        ard.close();
-        System.out.println("CLOSING");
     }
 
     @Override

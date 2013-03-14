@@ -4,6 +4,7 @@
  */
 package com.rbm.arduino.view;
 
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -59,8 +60,9 @@ public class CheckBoxPanel extends JPanel {
         JPanel bottomPanel = new JPanel();
 
         temperaturelogger = new JRadioButton("Temperature Logging");
-        logArea = new JTextArea("Temperature Log");
-
+        logArea = new JTextArea("");
+        logArea.setSize(100, 100);
+        
         bottomPanel.add(temperaturelogger);
         bottomPanel.add(logArea);
         this.add(bottomPanel);

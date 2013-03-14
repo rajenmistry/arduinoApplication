@@ -14,7 +14,7 @@ public class MainWindow extends JFrame {
     
     public void CreateGui() {
         this.setTitle("Arduino Window");
-        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         this.setSize(300, 300);
         this.setLocation(300, 300);
       
